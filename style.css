@@ -106,8 +106,23 @@ body {
   cursor: pointer;
   transition: color 0.3s ease;
 }
+  .right-sidebar .trends ul li {
+    margin: 10px 0;
+    font-size: 14px;
+  }
 
 .right-sidebar .trends ul li:hover {
+  color: #333;
+}
+
+.right-sidebar .trends ul li a {
+  color: #1da1f2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.right-sidebar .trends ul li a:hover {
   color: #333;
 }
 
