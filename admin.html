@@ -1,0 +1,75 @@
+diff --git a//dev/null b/admin.html
+index 0000000000000000000000000000000000000000..c766c9468b9b53d541547d6fa757c2a402e6f7ac 100644
+--- a//dev/null
++++ b/admin.html
+@@ -0,0 +1,70 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++  <meta charset="UTF-8">
++  <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <link rel="stylesheet" href="style.css">
++  <title>Admin Panel</title>
++</head>
++<body>
++  <div class="admin-panel">
++    <h1>Admin Panel</h1>
++    <div id="auth">
++      <button id="login">Login with GitHub</button>
++    </div>
++    <form id="post-form" style="display:none;">
++      <input type="text" id="title" placeholder="Post title" required>
++      <textarea id="content" placeholder="Write your post..." required></textarea>
++      <button type="submit">Publish</button>
++    </form>
++  </div>
++  <script>
++    const clientId = 'YOUR_GITHUB_CLIENT_ID';
++    const loginButton = document.getElementById('login');
++    const authDiv = document.getElementById('auth');
++    const postForm = document.getElementById('post-form');
++
++    loginButton.onclick = () => {
++      const redirectUri = window.location.origin + '/admin.html';
++      const authorizeUrl =
++        'https://github.com/login/oauth/authorize' +
++        `?client_id=${clientId}&redirect_uri=${redirectUri}&scope=repo`;
++      window.location.href = authorizeUrl;
++    };
++
++    async function handleOAuth() {
++      const code = new URLSearchParams(window.location.search).get('code');
++      if (!code) return;
++      // Exchange the code for an access token via a serverless function.
++      try {
++        const res = await fetch('/api/authenticate?code=' + code);
++        const data = await res.json();
++        if (data.token) {
++          authDiv.style.display = 'none';
++          postForm.style.display = 'block';
++          postForm.onsubmit = async (e) => {
++            e.preventDefault();
++            await fetch('/api/create-post', {
++              method: 'POST',
++              headers: {
++                'Content-Type': 'application/json',
++                'Authorization': 'Bearer ' + data.token
++              },
++              body: JSON.stringify({
++                title: document.getElementById('title').value,
++                content: document.getElementById('content').value
++              })
++            });
++            // The backend should commit or open a pull request using a
++            // GitHub token stored securely in environment variables.
++            alert('Post submitted for review.');
++          };
++        }
++      } catch (err) {
++        console.error(err);
++      }
++    }
++    handleOAuth();
++  </script>
++</body>
++</html>
