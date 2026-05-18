@@ -1,62 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>My Blog</title>
+  <title>Golden Pearl Japan 株式会社</title>
 </head>
 <body>
-  <div class="container">
-    <!-- Sol Menü -->
-    <aside class="sidebar">
-      <div class="logo">
-        <h1>MyBlog</h1>
+  <header class="site-header">
+    <div class="brand-wrap">
+      <div class="brand-mark" aria-hidden="true">GP</div>
+      <div class="brand-text">
+        <h1>Golden Pearl Japan 株式会社</h1>
+        <p>Japonya odaklı premium turizm çözümleri</p>
       </div>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Categories</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="admin.html">Admin</a></li>
-        </ul>
-      </nav>
-    </aside>
+    </div>
+  </header>
 
-    <!-- Ana İçerik -->
-    <main class="content">
-      <div class="post">
-        <h2>Blog Title 1</h2>
-        <p>Buraya blog gönderinizin içeriğini yazabilirsiniz. Uzun veya kısa metinler için uyumlu bir tasarım.</p>
-        <span class="timestamp">Posted on: 2024-12-18</span>
+  <main class="page">
+    <section class="hero">
+      <h2>Japonya seyahatinizi güvenle planlayın</h2>
+      <p>
+        Kurumsal gezi, bireysel tur, kültür rotaları ve vize danışmanlığı ile seyahatinizi baştan sona
+        profesyonel şekilde organize ediyoruz.
+      </p>
+      <a class="cta" href="#iletisim">Teklif Al</a>
+    </section>
+
+    <section class="tabs" aria-label="Bilgi Sekmeleri">
+      <input type="radio" name="tab" id="tab-aciklama" checked>
+      <input type="radio" name="tab" id="tab-hizmetler">
+      <input type="radio" name="tab" id="tab-iletisim">
+
+      <div class="tab-buttons">
+        <label for="tab-aciklama">Açıklama</label>
+        <label for="tab-hizmetler">Hizmetlerimiz</label>
+        <label for="tab-iletisim">İletişim</label>
       </div>
 
-      <div class="post">
-        <h2>Blog Title 2</h2>
-        <p>Başka bir gönderi örneği. Konuları, resimleri veya metinleri buraya ekleyebilirsiniz.</p>
-        <span class="timestamp">Posted on: 2024-12-17</span>
-      </div>
+      <div class="tab-panels">
+        <article class="panel panel-aciklama">
+          <h3>Firmamız Hakkında</h3>
+          <p>
+            Golden Pearl Japan 株式会社, Japonya'ya seyahat etmek isteyen misafirlerine güvenilir, şeffaf
+            ve kaliteli hizmet sunmak için kurulmuş yeni nesil bir turizm firmasıdır.
+          </p>
+        </article>
 
-      <!-- Daha Fazla Gönderi Buraya Eklenebilir -->
-    </main>
+        <article class="panel panel-hizmetler">
+          <h3>Önerilen Temel Hizmetler</h3>
+          <ul>
+            <li>Özel Japonya tur programları (Tokyo, Kyoto, Osaka, Hokkaido)</li>
+            <li>Vize ve evrak danışmanlığı</li>
+            <li>Konaklama + transfer paketleri</li>
+            <li>Kurumsal grup organizasyonları</li>
+            <li>Türkçe rehberlik ve yerel destek</li>
+          </ul>
+        </article>
 
-    <!-- Sağ Menü -->
-    <aside class="right-sidebar">
-      <div class="trends">
-        <h3>Popular Topics</h3>
-        <ul>
-          <li>#WebDevelopment</li>
-          <li>#JavaScript</li>
-          <li>#CSSDesign</li>
-          <li>#BloggingTips</li>
-          <li><a href="#">#WebDevelopment</a></li>
-          <li><a href="#">#JavaScript</a></li>
-          <li><a href="#">#CSSDesign</a></li>
-          <li><a href="#">#BloggingTips</a></li>
-        </ul>
+        <article class="panel panel-iletisim" id="iletisim">
+          <h3>İletişim</h3>
+          <p>Bu bölüm alan adınıza bağlı kurumsal e-posta ve form ile kolayca genişletilebilir.</p>
+          <ul>
+            <li>E-posta: info@yourdomain.com</li>
+            <li>Telefon: +90 (___) ___ __ __</li>
+            <li>Adres: Tokyo / Japonya (örnek)</li>
+          </ul>
+        </article>
       </div>
-    </aside>
-  </div>
+    </section>
+  </main>
 </body>
 </html>
