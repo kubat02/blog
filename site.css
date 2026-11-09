@@ -418,3 +418,18 @@
 .sakura-fall-18{--petal-left:52%;--petal-size:9px;--fall-duration:37s;--fall-delay:-33s;--petal-drift:-90px;--turn-duration:8s}
 }
 @layer responsive {.photo-work-title{display:block;margin:5px 0;font-size:11px;font-style:normal;color:#a6afb6;overflow-wrap:anywhere}}
+
+@layer responsive {
+  .rail-bottom-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .developer-credit {
+    color: var(--gold-light);
+    font: 800 14px/1 var(--sans);
+    letter-spacing: 0;
+  }
+}
