@@ -414,17 +414,24 @@
 @layer responsive {.photo-work-title{display:block;margin:5px 0;font-size:11px;font-style:normal;color:#a6afb6;overflow-wrap:anywhere}}
 
 @layer responsive {
-  .rail-bottom-line {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 12px;
+  @media (width > 1030px) {
+    .discovery-rail {
+      display: grid;
+      min-height: 100dvh;
+      padding-bottom: 12px;
+    }
+
+    .discovery-content {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   .developer-credit {
-    margin-top: 12px;
+    align-self: flex-end;
+    margin: auto 4px 0 0;
     color: var(--gold-light);
-    font: 700 11px/1.4 var(--sans);
+    font: 700 10px/1.4 var(--sans);
     letter-spacing: 0;
     white-space: nowrap;
     text-decoration: underline;
