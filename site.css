@@ -329,11 +329,6 @@
  .multipage .sidebar-signature{position:relative}
  .multipage .sidebar-signature::before{content:"";position:absolute;left:10px;bottom:0;width:1px;height:120px;background:linear-gradient(transparent,#b89b6c3a,transparent)}
  .multipage .topbar{background:#0d141cf5}
- .topbar-tools{display:flex;align-items:center;gap:9px;flex:none;min-width:0}
- .motion-toggle{width:40px;height:40px;min-height:40px;color:#bd9d85;background:#101b24}
- .motion-toggle svg{width:15px;height:15px}
- .motion-toggle[aria-pressed="false"]{color:#8d979e}
- .motion-toggle:disabled{opacity:.55}
  .multipage .page-heading{background:radial-gradient(circle at 88% 18%,#843b4930 0 68px,transparent 69px),linear-gradient(135deg,#1c1c2566,#101820 65%);border-bottom-color:#b89b6c3b}
  .heading-atmosphere{position:absolute;inset:0;overflow:hidden;z-index:-1;pointer-events:none}
  .heading-branch{position:absolute;inset:-78px -35px auto auto;width:480px;height:340px;background:url('/blog/assets/japan-sakura-branch.svg') right top/contain no-repeat;opacity:.22}
@@ -388,12 +383,11 @@
  @media(hover:hover){.photo-frame:hover .destination-photo{transform:scale(1.018)}.photo-frame:hover{border-color:#ceb180}.multipage .nav-link:hover{box-shadow:inset 2px 0 #b89b6c77}.multipage .place-button:hover{box-shadow:0 6px 22px #01050944}}
  @media(min-width:1900px){.atmosphere-branch-right{right:-30px;width:800px;height:650px}.atmosphere-branch-left{left:-80px;width:760px;height:620px;top:-100px}}
  @media(max-width:1030px){.atmosphere-branch{opacity:.25}.sakura-fall:nth-child(n+11){display:none}}
- @media(max-width:540px){.topbar-tools{gap:6px}.motion-toggle{width:35px;height:38px;min-height:38px}.topbar .language-control{padding-inline:7px}.topbar .language-control select{min-width:64px;max-width:94px;font-size:10px}.multipage .topbar{gap:8px}.multipage .topbar-brand strong{font-size:12px}.heading-branch{right:-112px;top:-60px;width:420px;opacity:.18}.sakura-rain-heading{--petal-opacity:.2}.sakura-fall:nth-child(n+6){display:none}.photo-open-hint{right:12px;bottom:12px;padding:7px}.photo-open-hint>span{display:none}.photo-number{left:12px;top:12px;font-size:9px}.photo-frame::after{inset:5px}.photo-dialog{width:calc(100vw - 20px);max-height:calc(100dvh - 20px)}.lightbox-toolbar{padding:10px 12px}.lightbox-media{padding:12px 12px 0}.lightbox-media img{max-height:calc(100dvh - 300px)}.photo-attribution{font-size:9px}.photo-caption-text{font-size:11px}.destination-figure{margin-bottom:28px}}
+ @media(max-width:540px){.topbar .language-control{padding-inline:7px}.topbar .language-control select{min-width:64px;max-width:94px;font-size:10px}.multipage .topbar{gap:8px}.multipage .topbar-brand strong{font-size:12px}.heading-branch{right:-112px;top:-60px;width:420px;opacity:.18}.sakura-rain-heading{--petal-opacity:.2}.sakura-fall:nth-child(n+6){display:none}.photo-open-hint{right:12px;bottom:12px;padding:7px}.photo-open-hint>span{display:none}.photo-number{left:12px;top:12px;font-size:9px}.photo-frame::after{inset:5px}.photo-dialog{width:calc(100vw - 20px);max-height:calc(100dvh - 20px)}.lightbox-toolbar{padding:10px 12px}.lightbox-media{padding:12px 12px 0}.lightbox-media img{max-height:calc(100dvh - 300px)}.photo-attribution{font-size:9px}.photo-caption-text{font-size:11px}.destination-figure{margin-bottom:28px}}
  @keyframes petal-fall{0%{opacity:0;transform:translate3d(0,-20px,0) rotate(-15deg)}9%{opacity:var(--petal-opacity)}90%{opacity:var(--petal-opacity)}100%{opacity:0;transform:translate3d(var(--petal-drift),var(--fall-distance),0) rotate(65deg)}}
  @keyframes petal-turn{0%{transform:rotateZ(-20deg) rotateY(10deg)}50%{transform:rotateZ(25deg) rotateY(65deg)}100%{transform:rotateZ(-10deg) rotateY(145deg)}}
  @keyframes ink-mist{from{transform:translate3d(-3%,0,0)}to{transform:translate3d(3%,8px,0)}}
- html[data-motion-paused="true"] :is(.sakura-fall,.sakura-fall i,.atmosphere-mist),html[data-page-hidden="true"] :is(.sakura-fall,.sakura-fall i,.atmosphere-mist){animation-play-state:paused!important}
- html[data-motion-paused="true"] .hero-art{transform:none!important}
+ html[data-page-hidden="true"] :is(.sakura-fall,.sakura-fall i,.atmosphere-mist){animation-play-state:paused!important}
  @media(prefers-reduced-motion:reduce){.sakura-rain{display:none}.atmosphere-mist{animation:none}.destination-photo{transition:none}.photo-frame:hover .destination-photo{transform:none}}
 }
 
@@ -429,7 +423,11 @@
 
   .developer-credit {
     color: var(--gold-light);
-    font: 800 14px/1 var(--sans);
+    font: 700 11px/1.4 var(--sans);
     letter-spacing: 0;
+    white-space: nowrap;
+    text-decoration: underline;
+    text-decoration-color: #b89b6c66;
+    text-underline-offset: 3px;
   }
 }
