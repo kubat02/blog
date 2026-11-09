@@ -439,3 +439,36 @@
     text-underline-offset: 3px;
   }
 }
+
+@layer responsive {
+  .multipage .company-record {
+    display: grid;
+    grid-template-columns: minmax(0, max-content) minmax(0, 1fr);
+    align-items: baseline;
+    gap: 12px 24px;
+    margin: 0;
+  }
+
+  .company-record dt {
+    color: var(--gold-light);
+    font-size: 12px;
+  }
+
+  .company-record dd {
+    margin: 0;
+    color: var(--page-text);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 640px) {
+    .multipage .company-record {
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 4px;
+    }
+
+    .company-record dt:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+}
